@@ -1,0 +1,5 @@
+Data Quality Finidngs: The dataset contains 525,461 transaction records.
+CustomerID is missing from 107,927 Reconds ( about 20.5%), while product descriptions are missing from 2,928 records ( about 0.6%). 
+Customer-level analyses will therefore require filtering or otherwise handling records without CustomerID 
+Missing Customer IDs are heavily concentrated among the United Kingdom transactions with 106,429 missing entries. Indicating, that customer-level analysis may require additional filtering or segmentation by geography. 
+The Median Unit price is $3.36 and the Max Price is $25,111.09, but there are 12,326 transactions that havea negative quantity. 
