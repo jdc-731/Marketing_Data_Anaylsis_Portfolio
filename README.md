@@ -1,2 +1,7 @@
-# Marketing_Data_Anaylsis_Portfolio
-Portfolio to showcase my SQL, Python, Excel, and Business Analysis Skills 
+# UCI Online Customer & Product Funnel Analysis 
+## Executive Summary:
+### Business Problem:
+### Methodology:
+###  Skills: 
+### Results & Business Recommendations: 
+### Next Steps: 
