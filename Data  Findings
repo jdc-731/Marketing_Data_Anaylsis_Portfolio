@@ -1,0 +1,18 @@
+Segments By Generation: 
+Generation Counts:
+generation
+Millennials          25490
+Generation X         13407
+Generation Z          5273
+Baby Boomers           942
+Silent Generation       99
+
+
+Conversion Rate by Generation:
+                   customers  conversions  conversion_rate
+generation                                                
+Silent Generation         99           43        43.434343
+Baby Boomers             942          402        42.675159
+Generation Z            5273          928        17.599090
+Generation X           13407         1354        10.099202
+Millennials            25490         2562        10.051000
