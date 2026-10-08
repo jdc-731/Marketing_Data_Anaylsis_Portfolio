@@ -1,0 +1,42 @@
+<h1> Segmenting by Genration: </h1> 
+
+from pathlib import Path
+import pandas as pd
+
+# Find the folder where this Python file is located
+folder = Path(__file__).resolve().parent
+
+# Find the CSV in the same folder
+csv_file = folder / "bank-full.csv"
+
+# Load the data
+df = pd.read_csv(csv_file, sep=";")
+
+print(df.head())
+print(df.shape)
+print(df.columns)
+print(df.info())
+
+# Create generational segments based on age
+
+def assign_generation(age):
+    if 14 <= age <= 29:
+        return "Generation Z"
+    elif 30 <= age <= 45:
+        return "Millennials"
+    elif 46 <= age <= 61:
+        return "Generation X"
+    elif 62 <= age <= 80:
+        return "Baby Boomers"
+    elif 81 <= age <= 98:
+        return "Silent Generation"
+    elif age >= 99:
+        return "Greatest Generation"
+    else:
+        return "Outside Defined Range"
+
+
+df["generation"] = df["age"].apply(assign_generation)
+
+print("\nGeneration Counts:")
+print(df["generation"].value_counts())
