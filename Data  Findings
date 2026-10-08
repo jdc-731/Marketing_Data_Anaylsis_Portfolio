@@ -18,4 +18,21 @@ Generation X           13407         1354        10.099202
 Millennials            25490         2562        10.051000
 
 Generation Summary: 
-Generational segmentation revealed a substantial difference between audience size and conversion performance. Millennials represent the largest customer segment, accounting for approximately 56% of customers, but have one of the lowest conversion rates at 10.05%. In contrast, Baby Boomers represent only about 2% of customers but convert at 42.68%, suggesting a potentially underpenetrated high-performing audience.
+Generational segmentation revealed a substantial difference between audience size and conversion
+performance. Millennials represent the largest customer segment, accounting for approximately 56% 
+of customers, but have one of the lowest conversion rates at 10.05%. In contrast, 
+Baby Boomers represent only about 2% of customers but convert at 42.68%, suggesting a 
+potentially underpenetrated high-performing audience.
+There are none unknown. 
+
+Conversion Rate by Education (Sorted):
+           customers  conversions  conversion_rate
+education                                         
+tertiary       13301         1996            15.01
+unknown         1857          252            13.57
+secondary      23202         2450            10.56
+primary         6851          591             8.63
+
+Unknown Education Records:
+1857
+
