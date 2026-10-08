@@ -1,4 +1,4 @@
-<h1> Segmenting by Genration: </h1> 
+# Segmenting by Genration: 
 
 from pathlib import Path
 import pandas as pd
@@ -35,8 +35,29 @@ def assign_generation(age):
     else:
         return "Outside Defined Range"
 
-
+#     Converstion rate by Generation
 df["generation"] = df["age"].apply(assign_generation)
 
 print("\nGeneration Counts:")
 print(df["generation"].value_counts())
+
+
+generation_conversion = (
+    df.groupby("generation")["y"]
+    .agg(
+        customers="count",
+        conversions=lambda x: (x == "yes").sum()
+    )
+)
+
+generation_conversion["conversion_rate"] = (
+    generation_conversion["conversions"]
+    / generation_conversion["customers"]
+    * 100
+)
+
+print("\nConversion Rate by Generation:")
+print(
+    generation_conversion
+    .sort_values("conversion_rate", ascending=False)
+)
