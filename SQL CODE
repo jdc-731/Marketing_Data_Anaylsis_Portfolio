@@ -1,3 +1,6 @@
+
+---- SEGMENTs BY GENERATION ----
+
 SELECT  
 CASE
   When age < 25 then 'Gen Z'
@@ -16,3 +19,58 @@ FROM `intricate-tempo-511123-b0.Bank_bd.Bank`
 Group By 1, 2, 3, 4
 HAVING total_customers >= 50 
 Order By conversion_rate_pct DESC; 
+
+
+---- IDENTIFYING WHICH CHANNELS HAVE THE HIGHEST CONVERSION RATE ----
+
+
+SELECT 
+  contact AS markeitng_channel,
+COUNT(*) AS total_contacts,
+COUNTIF ( y = true) AS conversions,
+ROUND(COUNTIF( y = true) * 100.0 /COUNT(*), 2) AS conversion_rate_pct
+FROM `intricate-tempo-511123-b0.Bank_bd.Bank` 
+GROUP BY 1
+ORDER BY conversion_rate_pct DESC;
+
+
+---- NUMBER OF TIMES CONTACTED VS> CONVERSION ARTE ----
+
+
+SELECT  
+  CASE
+  WHEN campaign = 1 then '1 touch'
+  WHEN campaign = 2 THEN '2 touches'
+  WHEN campaign = 3 THEN '3 touches'
+  WHEN campaign = 4 THEN '4 touches'
+  WHEN campaign BETWEEN 5 AND 9 THEN '5-9 touches'
+  ELSE '10+ touches (spam)'
+  END AS contact_frequency,
+COUNT(*) AS total_contacts,
+  COUNTIF ( y = true) AS conversions,
+  ROUND (COUNTIF( y = true) * 100.0 /COUNT(*),2) AS conversion_rate_pct
+FROM `intricate-tempo-511123-b0.Bank_bd.Bank` 
+Group By 1
+Order By MIN(campaign); 
+
+
+----WHICH SEGMENT HAS THE HIGHEST CONVERSION RATE ----
+
+
+SELECT  
+CASE
+  When age < 25 then 'Gen Z'
+  When age between 25 and 40 then 'Millennial'
+  When age between 41 and 56 then 'Gen X'
+  When age Between 57 and 75 then 'Boomer'
+  Else 'Silent Generation' 
+End As Generation,
+job, 
+COUNT(*) AS total_customers,
+  COUNTIF ( y = true) AS conversions,
+  ROUND (COUNTIF( y = true) * 100.0 /COUNT(*),2) AS conversion_rate_pct
+FROM `intricate-tempo-511123-b0.Bank_bd.Bank` 
+Group By 1, 2
+HAVING total_customers >= 100
+Order By conversion_rate_pct DESC
+LIMIT 5;
