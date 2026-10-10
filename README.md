@@ -8,9 +8,12 @@ Marketing teams must determine which customers to target, how frequently to cont
 Without a clear understanding of customer segmentation and conversion performance, the business is risking repeatedly contacting customers who are unlikely to convert while overlooking segments that respond more favorably. 
 
 ### Methodology:
-Step 1: Data Preparation 
+Step 1: Data Preparation <br> 
 The dataset was organized for analysis, with relevant customer attributes and campaign outcome measures arranged into fields suitable for aggregation.
-Before finalizing the project, the data preparation process should be documented to confirm how missing values, duplicate records, inconsistent categories,a nd any invalid values were handled
+Before finalizing the project, the data preparation process should be documented to confirm how missing values, duplicate records, inconsistent categories, and any invalid values were handled.
+
+Step 2: Contact Frequency Analysis <br>
+Firstly, understanding which marketing channel has the highest total customer count and the highest conversion rate. Customers were grouped according to marketing contact frequency. Conversion counts and conversion rates were compared across these groups to examine whether additional contact attempts were associated with better or worse conversion performance. 
 
 Step 2: Customer Segmentation
 Pivot tables were used to compare marketing perfomance across available customer attributes, including:
@@ -22,8 +25,6 @@ Pivot tables were used to compare marketing perfomance across available customer
 -Marketing channel <br>
 This segmentation approach allows campaign performance to be. examined across different customer groups rather than relying exclusively on overall averages.
 
-Step 3: Contact Frequency Analysis
-Customers were grouped according to marketing contact frequency. Conversion counts and conversion rates were compared across these groups to examine whether additional contact attempts were associated with better or worse conversion performance. 
 
 Step 4: Conversion Rate Analysis
 Conversion rate was calculated by dividing the number of contacts or eligible records in each segment, multiple any 100.
