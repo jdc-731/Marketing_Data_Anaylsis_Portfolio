@@ -14,7 +14,7 @@ Before finalizing the project, the data preparation process should be documented
 
 Step 2: Customer Segmentation
 Pivot tables were used to compare marketing perfomance across available customer attributes, including:
--Job or occupational category
+-Job or occupational category <br> 
 -Marital status
 -Education
 -Generation or age group, where defined in the data set
