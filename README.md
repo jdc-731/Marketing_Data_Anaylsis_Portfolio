@@ -15,11 +15,11 @@ Before finalizing the project, the data preparation process should be documented
 Step 2: Customer Segmentation
 Pivot tables were used to compare marketing perfomance across available customer attributes, including:
 -Job or occupational category <br> 
--Marital status
--Education
--Generation or age group, where defined in the data set
--Number of marketing contacts 
--Marketing channel
+-Marital status <br>
+-Education <br>
+-Generation or age group, where defined in the data set <br>
+-Number of marketing contacts <br>
+-Marketing channel <br>
 This segmentation approach allows campaign performance to be. examined across different customer groups rather than relying exclusively on overall averages.
 
 Step 3: Contact Frequency Analysis
