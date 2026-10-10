@@ -1,24 +1,20 @@
+----DATA EXAMINATION----
 
----- SEGMENTs BY GENERATION ----
-
-SELECT  
-CASE
-  When age < 25 then 'Gen Z'
-  When age between 25 and 40 then 'Millennial'
-  When age between 41 and 56 then 'Gen X'
-  When age Between 57 and 75 then 'Boomer'
-  Else 'Silent Generation' 
-End As Generation, 
-job,
-marital,
-education,
-COUNT(*) as total_customers,
-CountIF (y = true) As conversions,
-ROUND(countif ( y = true) * 100.0/COunt(*), 2) As conversion_rate_pct
-FROM `intricate-tempo-511123-b0.Bank_bd.Bank` 
-Group By 1, 2, 3, 4
-HAVING total_customers >= 50 
-Order By conversion_rate_pct DESC; 
+SELECT 
+    SUM(IF(age IS NULL, 1, 0)) AS missing_age,
+    SUM(IF(job IS NULL, 1, 0)) AS missing_job,
+    SUM(IF(marital IS NULL, 1, 0)) AS missing_marital,
+    SUM(IF(education IS NULL, 1, 0)) AS missing_education,
+    SUM(IF(campaign IS NULL, 1, 0)) AS missing_default,
+    SUM(IF(balance IS NULL, 1, 0)) AS missing_balance,
+    SUM(IF(housing IS NULL, 1, 0)) AS missing_housing,
+    SUM(IF(loan IS NULL, 1, 0)) AS missing_loan,
+    -- The grand total of all missing data combined:
+    (SUM(IF(age IS NULL, 1, 0)) + SUM(IF(job IS NULL, 1, 0)) + 
+     SUM(IF(marital IS NULL, 1, 0)) + SUM(IF(education IS NULL, 1, 0)) + 
+     SUM(IF(campaign IS NULL, 1, 0)) + SUM(IF(balance IS NULL, 1, 0)) + 
+     SUM(IF(housing IS NULL, 1, 0)) + SUM(IF(loan IS NULL, 1, 0))) AS grand_total_missing
+FROM `intricate-tempo-511123-b0.Bank_bd.Bank`;
 
 
 ---- IDENTIFYING WHICH CHANNELS HAVE THE HIGHEST CONVERSION RATE ----
@@ -54,6 +50,28 @@ Group By 1
 Order By MIN(campaign); 
 
 
+---- SEGMENT BY GENERATION ----
+
+SELECT  
+CASE
+  When age < 25 then 'Gen Z'
+  When age between 25 and 40 then 'Millennial'
+  When age between 41 and 56 then 'Gen X'
+  When age Between 57 and 75 then 'Boomer'
+  Else 'Silent Generation' 
+End As Generation, 
+job,
+marital,
+education,
+COUNT(*) as total_customers,
+CountIF (y = true) As conversions,
+ROUND(countif ( y = true) * 100.0/COunt(*), 2) As conversion_rate_pct
+FROM `intricate-tempo-511123-b0.Bank_bd.Bank` 
+Group By 1, 2, 3, 4
+HAVING total_customers >= 50 
+Order By conversion_rate_pct DESC; 
+
+
 ----WHICH SEGMENT HAS THE HIGHEST CONVERSION RATE ----
 
 
@@ -73,4 +91,26 @@ FROM `intricate-tempo-511123-b0.Bank_bd.Bank`
 Group By 1, 2
 HAVING total_customers >= 100
 Order By conversion_rate_pct DESC
+LIMIT 5;
+
+
+----WHICH SEGMENT HAS THE LOwEST CONVERSION RATE----
+
+
+SELECT  
+CASE
+  When age < 25 then 'Gen Z'
+  When age between 25 and 40 then 'Millennial'
+  When age between 41 and 56 then 'Gen X'
+  When age Between 57 and 75 then 'Boomer'
+  Else 'Silent Generation' 
+End As Generation,
+job, 
+COUNT(*) AS total_customers,
+  COUNTIF ( y = true) AS conversions,
+  ROUND (COUNTIF( y = true) * 100.0 /COUNT(*),2) AS conversion_rate_pct
+FROM `intricate-tempo-511123-b0.Bank_bd.Bank` 
+Group By 1, 2
+HAVING total_customers >= 100
+Order By conversion_rate_pct ASC
 LIMIT 5;
