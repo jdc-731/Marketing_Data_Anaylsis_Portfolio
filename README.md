@@ -58,7 +58,7 @@ Segments need at least 500 customers so that conversion rates are reliable. A 30
 ### Recommendations:
 1. Target management / tertiary-education segments first, in the order shown above. <br>
 2. Cap outreach at about 3 contacts per customer. <br>
-3. Concentrate volume on cellular device verses a landline, test scaling telephone (landlines), and fix channel tracking for the 29% of customers with an unknown channel. <br>
+3. Concentrate volume on cellular device versus a landline, test scaling telephone (landlines), and fix channel tracking for the 29% of customers with an unknown channel. <br>
 4. Pilot Gen Z, single, management as a high-conversion, low-volume test group. <br> 
 
 
