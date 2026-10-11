@@ -1,20 +1,33 @@
 ----DATA EXAMINATION----
 
-SELECT 
-    SUM(IF(age IS NULL, 1, 0)) AS missing_age,
-    SUM(IF(job IS NULL, 1, 0)) AS missing_job,
-    SUM(IF(marital IS NULL, 1, 0)) AS missing_marital,
-    SUM(IF(education IS NULL, 1, 0)) AS missing_education,
-    SUM(IF(campaign IS NULL, 1, 0)) AS missing_campaign,
-    SUM(IF(balance IS NULL, 1, 0)) AS missing_balance,
-    SUM(IF(housing IS NULL, 1, 0)) AS missing_housing,
-    SUM(IF(loan IS NULL, 1, 0)) AS missing_loan,
-    -- The grand total of all missing data combined:
-    (SUM(IF(age IS NULL, 1, 0)) + SUM(IF(job IS NULL, 1, 0)) + 
-     SUM(IF(marital IS NULL, 1, 0)) + SUM(IF(education IS NULL, 1, 0)) + 
-     SUM(IF(campaign IS NULL, 1, 0)) + SUM(IF(balance IS NULL, 1, 0)) + 
-     SUM(IF(housing IS NULL, 1, 0)) + SUM(IF(loan IS NULL, 1, 0))) AS grand_total_missing
-FROM `intricate-tempo-511123-b0.Bank_bd.Bank`;
+
+--Any missing infomation--
+SELECT
+  COUNT(*) AS total_rows,
+  COUNTIF(age IS NULL) AS null_age,
+  COUNTIF(balance IS NULL) AS null_balance,
+  COUNTIF (campaign IS NULL) AS nulll_campaign,
+  COUNTIF ( y IS NULL) AS null_y,
+  COUNTIF(job IS NULL OR job = 'unknowns') AS missing_job, 
+  COUNTIF (marital IS NULL OR marital = 'unknown') AS missing_martial_status,
+  COUNTIF (education IS NULL OR education = 'unknown') AS missing_education,
+  COUNTIF(contact IS NULL OR contact = 'unknown') AS missing_contact, 
+  ROUND(COUNTIF(contact IS NULL OR contact= 'unkown') * 100.00 / COUNT (*), 2) AS pct_missing_contact
+FROM `intricate-tempo-511123-b0.Bank_bd.Bank`; 
+
+
+--Any min, max, and duplicates--
+
+
+SELECT  
+  MIN(age) AS min_age,
+  MAX(age) AS max_age,
+  MIN(campaign) AS min_campaign,
+  MAX(campaign) AS max_campaign,
+  MIN(balance) AS min_balance,
+  MAX(balance) AS max_balance,
+  COUNT(*) - COUNT (DISTINCT TO_JSON_STRING(t)) AS duplicate_rows
+FROM `intricate-tempo-511123-b0.Bank_bd.Bank` AS t; 
 
 
 ---- IDENTIFYING WHICH CHANNELS HAVE THE HIGHEST CONVERSION RATE ----
