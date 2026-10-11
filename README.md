@@ -52,7 +52,7 @@ Segments need at least 500 customers so that conversion rates are reliable. A 30
 
 <img width="750" height="593" alt="original-06147B19-8823-45D0-9794-890E5DC3F1F7" src="https://github.com/user-attachments/assets/0249376d-b08d-4c2c-887d-987ff7826724" />
 
-<img width="1907" height="1500" alt="Screenshot 2026-10-11 at 1 20 01 AM" src="https://github.com/user-attachments/assets/aeb36e91-42d7-4d54-8413-a39623dd3b13" />
+<img width="9530" height="800" alt="Screenshot 2026-10-11 at 1 20 01 AM" src="https://github.com/user-attachments/assets/aeb36e91-42d7-4d54-8413-a39623dd3b13" />
 
 
 ### Recommendations:
