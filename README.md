@@ -34,7 +34,7 @@ Segments need at least 500 customers so that conversion rates are reliable. A 30
 ### Key Findings:
  1. Which marketing channel converts the most? <br>
     Cellular reaches about 65% of customers and drives about 83% of conversions. Telephone performs nearly as well on a small base and is worth testing at larger scale. About 29% of customers have an unknown channel that converts at roughly one-third the cellular rate, which points to a tracking gap. <br>
-    <img width="958" height="593" alt="Channel Analysis " src="https://github.com/user-attachments/assets/17f0b1b9-a78d-45a4-9f9f-a65969caeb75" />
+    <img width="750" height="393" alt="Channel Analysis " src="https://github.com/user-attachments/assets/17f0b1b9-a78d-45a4-9f9f-a65969caeb75" />
 
 2. What is the <I> sweet spot </i> for the number of contacts? <br>
   Conversion holds steady at about 11.2% for customers contacted 2 or 3 times, then falls with each additional contact, reaching 4.17% at 10+. The sweet spot is up to about 3 contacts. Returns diminish after that.
@@ -50,9 +50,9 @@ Segments need at least 500 customers so that conversion rates are reliable. A 30
 <li> Deprioritize: Millennial, married, technician, secondary (1,783 customers at 7.68%). It reaches the top 10 only because of its size. </li>
 </ul>
 
-<img width="1500" height="593" alt="original-06147B19-8823-45D0-9794-890E5DC3F1F7" src="https://github.com/user-attachments/assets/0249376d-b08d-4c2c-887d-987ff7826724" />
+<img width="750" height="593" alt="original-06147B19-8823-45D0-9794-890E5DC3F1F7" src="https://github.com/user-attachments/assets/0249376d-b08d-4c2c-887d-987ff7826724" />
 
-<img width="1907" height="1000" alt="Screenshot 2026-10-11 at 1 20 01 AM" src="https://github.com/user-attachments/assets/aeb36e91-42d7-4d54-8413-a39623dd3b13" />
+<img width="1907" height="1900" alt="Screenshot 2026-10-11 at 1 20 01 AM" src="https://github.com/user-attachments/assets/aeb36e91-42d7-4d54-8413-a39623dd3b13" />
 
 
 ### Recommendations:
