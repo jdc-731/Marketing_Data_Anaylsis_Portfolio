@@ -13,7 +13,7 @@ Marketing teams must determine which customers to target, how frequently to cont
 Without a clear understanding of customer segmentation and conversion performance, the business is risking repeatedly contacting customers who are unlikely to convert while overlooking segments that respond more favorably. 
 
 ### Data
-Source: UCI Machine Learning Repository, Bank Marketing dataset (bank-full). [https://archive.ics.uci.edu/dataset/222/bank%2Bmarketing?utm_source=chatgpt.com] 
+Source: UCI Machine Learning Repository, Bank Marketing dataset (bank-full). [https://archive.ics.uci.edu/dataset/222/bank%2Bmarketing.com] 
 Size: 45,211 customer records, 5,289 conversions (11.70% overall conversion rate) <br>
 One row = one customer. y = TRUE means the customer subscribed to a term deposit (a conversion). <br>
 Fields used: age, job, marital, education, balance, contact (marketing channel), campaign (number of contacts to that customer), y. <br>
@@ -41,7 +41,7 @@ Segments need at least 500 customers so that conversion rates are reliable. A 30
 <img width="676" height="371" alt="Contact Frequency" src="https://github.com/user-attachments/assets/ae9ac3d3-1640-4385-832e-c978ba535d39" />
 
 
-4. Which customer segments should marketing prioritize? 
+3. Which customer segments should marketing prioritize? 
 <ul>
 <li> Priority 1 has the largest converted balance and the second-best conversion rate. </li>
 <li> Priority 2 has the highest average balance. </li>
@@ -67,7 +67,6 @@ Segments need at least 500 customers so that conversion rates are reliable. A 30
 <li> No cost data. Results show conversion and balance, not ROI. </li>
 <li> Balance is a proxy for value, not realized revenue. </li>
 <li> Selection effect in contact frequency:customers who convert early stop being contacted, so the decline at higher contact counts is a strong signal, not proof that extra contacts cause lower conversion. </li>
-<li> Generation groups are age-based bands, not official cohort definitions. </li>
 <li> Equal weighting of the three ranks is a judgment call, and ranks can reward size over efficiency. </li>
 <li> Average balance is calculated across all customers in a segment, not only those who converted. </li>
 <li> Unknown channel and education values limit how precisely channels and education levels can be compared.</li>
