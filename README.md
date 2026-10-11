@@ -50,9 +50,9 @@ Segments need at least 500 customers so that conversion rates are reliable. A 30
 <li> Deprioritize: Millennial, married, technician, secondary (1,783 customers at 7.68%). It reaches the top 10 only because of its size. </li>
 </ul>
 
-<img width="958" height="593" alt="original-06147B19-8823-45D0-9794-890E5DC3F1F7" src="https://github.com/user-attachments/assets/0249376d-b08d-4c2c-887d-987ff7826724" />
+<img width="1500" height="593" alt="original-06147B19-8823-45D0-9794-890E5DC3F1F7" src="https://github.com/user-attachments/assets/0249376d-b08d-4c2c-887d-987ff7826724" />
 
-<img width="1907" height="593" alt="Screenshot 2026-10-11 at 1 20 01 AM" src="https://github.com/user-attachments/assets/aeb36e91-42d7-4d54-8413-a39623dd3b13" />
+<img width="1907" height="1000" alt="Screenshot 2026-10-11 at 1 20 01 AM" src="https://github.com/user-attachments/assets/aeb36e91-42d7-4d54-8413-a39623dd3b13" />
 
 
 ### Recommendations:
