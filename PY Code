@@ -2,22 +2,9 @@
 
 from pathlib import Path
 import pandas as pd
-
-# Find the folder where this Python file is located
 folder = Path(__file__).resolve().parent
-
-# Find the CSV in the same folder
 csv_file = folder / "bank-full.csv"
-
-# Load the data
 df = pd.read_csv(csv_file, sep=";")
-
-print(df.head())
-print(df.shape)
-print(df.columns)
-print(df.info())
-
-# Create generational segments based on age
 
 def assign_generation(age):
     if 14 <= age <= 29:
