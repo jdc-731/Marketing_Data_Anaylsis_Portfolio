@@ -51,7 +51,7 @@ Group By contact_frequency
 Order By MIN(campaign); 
 
 
----- SEGMENT BY GENERATION ----
+---- SEGMENTATION ----
 
 SELECT  
 CASE
@@ -61,15 +61,15 @@ CASE
   When age Between 57 and 75 then 'Boomer'
   Else 'Silent Generation' 
 End As Generation, 
-job,
-marital,
-education,
+Marital,
+Job,
+Education,
 COUNT(*) as total_customers,
 CountIF (y = true) As conversions,
 ROUND(countif ( y = true) * 100.0/COunt(*), 2) As conversion_rate_pct
 FROM `intricate-tempo-511123-b0.Bank_bd.Bank` 
 Group By 1, 2, 3, 4
-HAVING total_customers >= 50 
+HAVING total_customers >= 500 
 Order By conversion_rate_pct DESC; 
 
 
@@ -84,13 +84,15 @@ CASE
   When age Between 57 and 75 then 'Boomer'
   Else 'Silent Generation' 
 End As Generation,
-job, 
+Marital,
+Job, 
+Education,
 COUNT(*) AS total_customers,
   COUNTIF ( y = true) AS conversions,
   ROUND (COUNTIF( y = true) * 100.0 /COUNT(*),2) AS conversion_rate_pct
 FROM `intricate-tempo-511123-b0.Bank_bd.Bank` 
-Group By 1, 2
-HAVING total_customers >= 100
+Group By 1, 2, 3
+HAVING total_customers >= 500
 Order By conversion_rate_pct DESC
 LIMIT 5;
 
@@ -106,12 +108,60 @@ CASE
   When age Between 57 and 75 then 'Boomer'
   Else 'Silent Generation' 
 End As Generation,
-job, 
+Marital,
+Job,
+Education,
 COUNT(*) AS total_customers,
   COUNTIF ( y = true) AS conversions,
   ROUND (COUNTIF( y = true) * 100.0 /COUNT(*),2) AS conversion_rate_pct
 FROM `intricate-tempo-511123-b0.Bank_bd.Bank` 
 Group By 1, 2
-HAVING total_customers >= 100
+HAVING total_customers >= 500
 Order By conversion_rate_pct ASC
 LIMIT 5;
+
+
+---- WHICH SEGMENT SHOULD MARKETING PRIORITIZE ----
+
+
+WITH segments AS (
+    SELECT
+        CASE
+            WHEN age <= 29 then 'Gen Z'
+            WHEN age between 30 and 45 then 'Millennial'
+            WHEN age between 46 and 61 then 'Gen X'
+            WHEN age Between 62 and 80 then 'Boomer'
+            Else 'Silent Generation' 
+End As Generation, 
+Marital,
+Job,
+Education,
+COUNT(*) as total_customers,
+CountIF (y = true) As conversions,
+ROUND(countif ( y  = true) * 100.0 / COUNT (*),2) AS conversion_rate_pct,
+SUM(IF( y = TRUE, balance,0)) AS total_converted_balance, 
+ROUND(AVG(balance),2) AS avg_customer_balance
+FROM `intricate-tempo-511123-b0.Bank_bd.Bank`
+GROUP BY 1,2,3,4
+HAVING total_customerS >= 500
+),
+ranked AS (
+SELECT
+*,
+    RANK() OVER (ORDER BY conversion_rate_pct DESC)  AS conversion_efficiency_rank,
+    RANK() OVER (ORDER BY total_converted_balance DESC) AS converted_balance_rank,
+    RANK() OVER (ORDER BY avg_customer_balance DESC) AS avg_balance_rank
+FROM segments
+) 
+SELECT
+*,
+conversion_efficiency_rank
+    + converted_balance_rank
+    + avg_balance_rank AS combined_priority_score
+FROM ranked
+ORDER BY combined_priority_score ASC,
+    total_converted_balance DESC
+LIMIT 10;
+
+
+---- ---- 
