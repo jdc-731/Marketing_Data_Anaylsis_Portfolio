@@ -53,7 +53,7 @@ SELECT
   WHEN campaign = 3 THEN '3 touches'
   WHEN campaign = 4 THEN '4 touches'
   WHEN campaign BETWEEN 5 AND 9 THEN '5-9 touches'
-  WHEN '10+ touches (spam)'
+  WHEN '10+ touches THEN (spam)'
 ELSE 'Unknown'
   END AS contact_frequency,
 COUNT(*) total_customers,
