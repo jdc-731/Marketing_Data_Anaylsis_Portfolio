@@ -1,8 +1,8 @@
 # Bank Telemarketing Campaign: <br>
 Conversion & Segment Prioritization 
 ## Executive Summary:
-The objective of this project is to identify customer segments and campaign characteristics associated with higher conversion rates. I used SQL in BigQuery and Google Sheets to compare conversion rates across channels, contact frequency, and customer segments, then combined conversion rate with converted account balance into a priority score.
-<em>Headline findings </em> <br>
+The objective of this project is to identify customer segments and campaign characteristics associated with higher conversion rates. I used SQL in BigQuery and Google Sheets to compare conversion rates across channels, contact frequency, and customer segments, then combined conversion rate with converted account balance into a priority score. <br>
+<strong>Headline findings </strong> <br>
 Best channel: Cellular converts at 14.92% and produces about 83% of all conversions. <br>
 Contact sweet spot: Conversion holds near 11% through 3 contacts, then declines. Cap outreach at about 3 contacts. <br>
 Segment to prioritize: Millennial, single, management, tertiary education ranks first. The top four segments were identical at minimum sizes of 500 and 300 customers. <br>
