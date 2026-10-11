@@ -22,7 +22,7 @@ FROM `intricate-tempo-511123-b0.Bank_bd.Bank`;
 
 SELECT 
   contact AS marketing_channel,
-COUNT(*) AS total_contacts,
+COUNT(*) AS total_customers,
 COUNTIF ( y = true) AS conversions,
 ROUND(COUNTIF( y = true) * 100.0 /COUNT(*), 2) AS conversion_rate_pct
 FROM `intricate-tempo-511123-b0.Bank_bd.Bank` 
@@ -41,12 +41,13 @@ SELECT
   WHEN campaign = 4 THEN '4 touches'
   WHEN campaign BETWEEN 5 AND 9 THEN '5-9 touches'
   WHEN '10+ touches (spam)'
+ELSE 'Unknown'
   END AS contact_frequency,
-COUNT(*) AS total_contacts,
+COUNT(*) total_customers,
   COUNTIF ( y = true) AS conversions,
   ROUND (COUNTIF( y = true) * 100.0 /COUNT(*),2) AS conversion_rate_pct
 FROM `intricate-tempo-511123-b0.Bank_bd.Bank` 
-Group By 1
+Group By contact_frequency
 Order By MIN(campaign); 
 
 
