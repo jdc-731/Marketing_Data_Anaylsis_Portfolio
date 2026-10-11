@@ -50,16 +50,19 @@ Segments need at least 500 customers so that conversion rates are reliable. A 30
 <li> Deprioritize: Millennial, married, technician, secondary (1,783 customers at 7.68%). It reaches the top 10 only because of its size. </li>
 </ul>
 
+<img width="1206" height="1457" alt="original-06147B19-8823-45D0-9794-890E5DC3F1F7" src="https://github.com/user-attachments/assets/0249376d-b08d-4c2c-887d-987ff7826724" />
+
+<img width="1907" height="284" alt="Screenshot 2026-10-11 at 1 20 01 AM" src="https://github.com/user-attachments/assets/aeb36e91-42d7-4d54-8413-a39623dd3b13" />
 
 
 ### Recommendations:
 1. Target management / tertiary-education segments first, in the order shown above. <br>
 2. Cap outreach at about 3 contacts per customer. <br>
-3. Concentrate volume on cellular, test scaling telephone, and fix channel tracking for the 29% of customers with an unknown channel. <br>
+3. Concentrate volume on cellular device verses a landline, test scaling telephone (landlines), and fix channel tracking for the 29% of customers with an unknown channel. <br>
 4. Pilot Gen Z, single, management as a high-conversion, low-volume test group. <br> 
 
 
-#### Limitations and Next Steps: 
+#### Limitations: 
 <ul> 
 <li> No cost data. Results show conversion and balance, not ROI. </li>
 <li> Balance is a proxy for value, not realized revenue. </li>
